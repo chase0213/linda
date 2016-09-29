@@ -1,0 +1,10 @@
+<section class="record">
+  <ul class="record-list">
+    <li *ngFor="let record of records">
+      <div class="date">{{asDate(record.beginAt)}} ({{calcSummary(record)}})</div>
+      <div class="time">
+        {{asTime(record.beginAt)}} - {{asTime(record.endAt)}}
+      </div>
+    </li>
+  </ul>
+</section>

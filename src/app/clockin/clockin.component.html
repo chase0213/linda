@@ -1,0 +1,7 @@
+<section class='clockin'>
+  <nav class="one-line-buttons">
+    <a md-raised-button (click)="onClickButton('start')" [ngClass]="{'active': isActive['start'], 'inactive': isInactive['start']}">Start</a>
+    <a md-raised-button (click)="onClickButton('pause')" [ngClass]="{'active': isActive['pause'], 'inactive': isInactive['pause']}">Pause</a>
+    <a md-raised-button (click)="onClickButton('stop')" [ngClass]="{'active': isActive['stop'], 'inactive': isInactive['stop']}">Stop</a>
+  </nav>
+</section>

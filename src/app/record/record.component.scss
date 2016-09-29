@@ -1,0 +1,25 @@
+@import '../../palette';
+
+.record {
+  background: rgba($gray-color, 0.6);
+  padding: 1em 0;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .date {
+    color: $lightblue-color;
+    font-size: .8em;
+    padding: .2em .4em;
+  }
+
+  .time {
+    font-size: 1.1em;
+    text-align: center;
+    padding: .8em;
+  }
+
+}

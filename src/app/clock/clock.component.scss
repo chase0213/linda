@@ -1,0 +1,19 @@
+@import '../../palette';
+
+.clock {
+  background: $blue-color;
+  color: $white-color;
+  height: 9em;
+  padding: 2em 0;
+  text-align: center;
+  width: 100%;
+
+  h4 {
+    font-size: 1.8em;
+  }
+
+  p {
+    color: $lightblue-color;
+    font-size: .8em;
+  }
+}

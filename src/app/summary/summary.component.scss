@@ -1,0 +1,25 @@
+@import '../../palette';
+
+.summary {
+  dt {
+    border-bottom: $lightblue-color 1px solid;
+    color: $lightblue-color;
+    font-size: .8em;
+    padding: .4em .8em;
+  }
+
+  dd {
+    color: $darkblue-color;
+    font-size: .8em;
+    margin: 0;
+    padding: .4em 0;
+    text-align: center;
+
+    .number {
+      color: $blue-color;
+      font-size: 1.4rem;
+      font-weight: bold;
+      padding: 0 .2em;
+    }
+  }
+}

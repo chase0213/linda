@@ -1,0 +1,24 @@
+<section class="summary">
+  <dl>
+    <dt>Daily</dt>
+    <dd *ngIf="summary.daily">
+      <span class="number">{{summary.daily.hour}}</span>h
+      <span class="number">{{summary.daily.minute}}</span>min
+      <span class="number">{{summary.daily.second}}</span>sec
+    </dd>
+
+    <dt>Weekly</dt>
+    <dd *ngIf="summary.weekly">
+      <span class="number">{{summary.weekly.hour}}</span>h
+      <span class="number">{{summary.weekly.minute}}</span>min
+      <span class="number">{{summary.weekly.second}}</span>sec
+    </dd>
+
+    <dt>Monthly</dt>
+    <dd *ngIf="summary.monthly">
+      <span class="number">{{summary.monthly.hour}}</span>h
+      <span class="number">{{summary.monthly.minute}}</span>min
+      <span class="number">{{summary.monthly.second}}</span>sec
+    </dd>
+  </dl>
+</section>
