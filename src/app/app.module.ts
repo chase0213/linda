@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { ClockinComponent } from './clockin/clockin.component';
 
 import { MdButtonModule } from '@angular2-material/button';
+import { MdCardModule } from '@angular2-material/card';
 
 import { CookieService } from './cookie.service';
 import { LocalStorageService } from './local-storage.service';
@@ -30,6 +31,7 @@ import { RecordComponent } from './record/record.component';
 
     // Material Design
     MdButtonModule,
+    MdCardModule,
   ],
   providers: [
     CookieService,

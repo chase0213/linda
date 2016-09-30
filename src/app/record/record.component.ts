@@ -13,6 +13,7 @@ export class RecordComponent implements OnInit, OnDestroy {
 
   constructor(private _storage:StorageService) { }
 
+  cardsX:any = {};
   records:any[] = [];
   subscription:Subscription;
 
@@ -55,6 +56,34 @@ export class RecordComponent implements OnInit, OnDestroy {
     const minute = Math.floor((s % 3600) / 60);
     const second = Math.floor((s % 3600) % 60);
     return hour + "h " + minute + "min " + second + "sec";
+  }
+
+  onClickDismissButton(index:number) {
+    var stream;
+    try {
+      stream = JSON.parse(this._storage.get(HISTORY_KEY));
+    } catch (e) {
+      console.warn(e);
+      stream = [];
+    } finally {
+      stream = stream || [];
+    }
+    stream.splice(index, 1);
+    this._storage.set(HISTORY_KEY, JSON.stringify(stream))
+
+    this.cardsX[index] = 'vanish';
+    setTimeout(() => {
+      this.cardsX[index] = null;
+      this.records.splice(index, 1);
+    }, 400);
+  }
+
+  swipe(index:number, event) {
+    this.cardsX[index] = event;
+  }
+
+  tap(index:number) {
+    this.cardsX[index] = null;
   }
 
 }
