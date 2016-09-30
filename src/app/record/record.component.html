@@ -1,10 +1,21 @@
 <section class="record">
   <ul class="record-list">
-    <li *ngFor="let record of records">
+    <li *ngFor="let record of records; let idx=index">
       <div class="date">{{asDate(record.beginAt)}} ({{calcSummary(record)}})</div>
-      <div class="time">
-        {{asTime(record.beginAt)}} - {{asTime(record.endAt)}}
-      </div>
+      <md-card
+        [ngClass]="{'swipe-left': cardsX[idx]==='swipeleft', 'vanish': cardsX[idx]==='vanish'}"
+        (tap)="tap(idx)"
+        (swipeleft)="swipe(idx, $event.type)">
+        <div class="time">
+          {{asTime(record.beginAt)}} - {{asTime(record.endAt)}}
+        </div>
+      </md-card>
+      <md-card
+        class="dismiss-card"
+        [ngClass]="{'active': cardsX[idx]==='swipeleft'}"
+        (click)="onClickDismissButton(idx)">
+        ×
+      </md-card>
     </li>
   </ul>
 </section>

@@ -19,7 +19,57 @@
   .time {
     font-size: 1.1em;
     text-align: center;
-    padding: .8em;
+    padding: 0;
+  }
+
+  md-card {
+    $swipe-dx: 60px;
+    $card-height: 70px;
+
+    height: $card-height;
+    line-height: $card-height;
+    padding: 0;
+    transition-duration: 0.2s;
+    transition-property: transform;
+    z-index: 1;
+
+    &.swipe-left {
+      transform: translateX(- $swipe-dx);
+    }
+
+    &.swipe-right {
+      transform: translateX($swipe-dx);
+    }
+
+    &.vanish {
+      opacity: 0;
+      transform: translateX(- 102%);
+      transition-duration: 0.4s;
+      transition-property: opacity, transform;
+    }
+
+    &.dismiss-card {
+      background: $red-color;
+      color: $white-color;
+      display: inline-block;
+      font-size: 1.4em;
+      font-weight: bold;
+      height: $card-height;
+      margin-top: - $card-height;
+      opacity: 0;
+      padding: 0;
+      position: absolute;
+      right: 0;
+      text-align: center;
+      transition-duration: 0.2s;
+      transition-property: opacity;
+      width: $swipe-dx;
+      z-index: 0;
+
+      &.active {
+        opacity: 1;
+      }
+    }
   }
 
 }
